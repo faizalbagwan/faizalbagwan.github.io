@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Faizal Bagwan | Cloud & DevOps Engineer</title>
+
+  <meta name="description" content="Cloud & DevOps Engineer with hands-on experience in AWS, CI/CD automation, Docker, Linux, and DevSecOps practices."/>
+  <meta name="author" content="Faizal Bagwan"/>
+
+  <style>
+    :root {
+      /* Keeping your color palette - it's professional and clean */
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0; /* Slightly lighter border for cleaner look */
+      --accent: #334155;
+      --radius: 6px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth; /* Adds the smooth scrolling effect */
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--text-main);
+    }
+
+    .container {
+      max-width: 1000px; /* Tightened slightly for better readability */
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px); /* Modern blur effect */
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+
+    nav {
+      height: 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-name {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--text-main);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    nav a:hover {
+      color: var(--text-main);
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .hero {
+      padding-top: 160px;
+      padding-bottom: 100px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 24px;
+      color: var(--text-main);
+    }
+
+    .hero p {
+      max-width: 600px;
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+
+    .cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border: 1px solid var(--border);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+      background: white;
+      border-radius: var(--radius);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      border-color: var(--text-main);
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    .btn.primary {
+      background: var(--text-main);
+      color: white;
+      border-color: var(--text-main);
+    }
+
+    .btn.primary:hover {
+      background: #1e293b; /* Slightly lighter shade for hover */
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .section-desc {
+      max-width: 600px;
+      color: var(--text-muted);
+      margin-bottom: 48px;
+    }
+
+    .projects {
+      display: grid;
+      gap: 32px;
+    }
+
+    .project {
+      border: 1px solid var(--border);
+      background: white; /* Changed to white for cleaner contrast */
+      padding: 32px;
+      border-radius: var(--radius);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    /* Small human touch: cards lift slightly on hover */
+    .project:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border-color: #cbd5e1;
+    }
+
+    .project h3 {
+      font-size: 1.25rem;
+      margin-bottom: 4px;
+    }
+
+    .project small {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      display: block;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+
+    .project p {
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .project ul {
+      padding-left: 20px;
+      margin-bottom: 20px;
+      color: var(--text-muted);
+    }
+
+    .project ul li {
+      margin-bottom: 8px;
+    }
+
+    .tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      border-radius: 4px;
+    }
+
+    .experience {
+      background: var(--surface); /* Distinct background for experience section */
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .experience-item {
+      margin-bottom: 36px;
+    }
+
+    .experience-item h3 {
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+    }
+
+    .experience-meta {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .experience-item ul {
+      padding-left: 20px;
+      color: var(--text-muted);
+    }
+     
+    .experience-item li {
+        margin-bottom: 8px;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .skill {
+      border: 1px solid var(--border);
+      padding: 24px;
+      border-radius: var(--radius);
+    }
+
+    .skill h4 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    .skill span {
+      display: inline-block;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      nav ul { display: none; } /* Simplified mobile nav for V1 */
+      .nav-name { margin: 0 auto; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="nav-name">FAIZAL BAGWAN</div>
+      <ul>
+        <li><a href="Faizal_Bagwan_Resume.pdf" target="_blank">Resume</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Cloud & DevOps Engineer</h1>
+    <p>
+      specializing in AWS infrastructure, CI/CD automation, and DevSecOps. 
+      I build reproducible deployment workflows and reliable systems.
+    </p>
+    <div class="cta">
+      <a href="#" class="btn primary" download>Download Resume</a>
+      <a href="#projects" class="btn">View Projects</a>
+      <a href="#contact" class="btn">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-desc">
+      Selected works involving ML infrastructure and cloud automation.
+    </p>
+
+    <div class="projects">
+
+      <div class="project">
+        <h3>ML Inference Deployment System</h3>
+        <small>Docker • Python • CUDA</small>
+        <p>
+          Designed a containerized environment for deploying machine learning models requiring GPU acceleration.
+        </p>
+        <ul>
+          <li>Built optimized Docker images with CUDA support for inference.</li>
+          <li>Implemented dynamic model loading via environment variables.</li>
+          <li>Ensured environment isolation for reproducible research outcomes.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Docker</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Python</span>
+          <span class="tag">NVIDIA CUDA</span>
+        </div>
+        <a href="https://github.com/faizalbagwan786" target="_blank">View Source</a>
+      </div>
+
+      <div class="project">
+        <h3>3-Tier Web App Architecture</h3>
+        <small>AWS • Terraform • CI/CD</small>
+        <p>
+          End-to-end deployment of a scalable web application using industry-standard DevOps tools.
+        </p>
+        <ul>
+          <li>Provisioned infrastructure on AWS (EC2, RDS, S3) using code.</li>
+          <li>Automated build and test pipelines using Jenkins.</li>
+          <li>Integrated SonarQube for code quality gates before deployment.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">AWS</span>
+          <span class="tag">Jenkins</span>
+          <span class="tag">SonarQube</span>
+        </div>
+        <a href="https://github.com/faizalbagwan786" target="_blank">View Source</a>
+      </div>
+
+      <div class="project">
+        <h3>DevSecOps Pipeline Integration</h3>
+        <small>Security • Automation</small>
+        <p>
+          Shift-left security implementation integrating vulnerability scanning into the build process.
+        </p>
+        <ul>
+          <li>Automated container scanning using Trivy to detect CVEs.</li>
+          <li>Configured pipeline failure policies for critical vulnerabilities.</li>
+          <li>Reduced deployment risk by catching security issues early.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Trivy</span>
+          <span class="tag">Jenkins</span>
+          <span class="tag">Bash</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="experience">
+  <div class="container">
+    <h2 class="section-title">Experience</h2>
+
+    <div class="experience-item">
+      <h3>Associate Trainee – Cloud & DevOps</h3>
+      <div class="experience-meta">i3 Marketing Solutions Pvt Ltd • Pune, India • May 2025 – Present</div>
+      <ul>
+        <li>Assisted in the architecture and deployment of 3-tier applications on AWS.</li>
+        <li>Managed Docker container registries and optimized image sizes.</li>
+        <li>Maintained CI/CD pipelines integrating Jenkins, Nexus, and security tools.</li>
+        <li>Provided infrastructure support for ML inference workloads on Linux/GPU systems.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills">
+      <div class="skill">
+        <h4>Cloud Infrastructure</h4>
+        <span>AWS (EC2, S3, IAM, VPC, RDS, ECR)</span>
+      </div>
+      <div class="skill">
+        <h4>DevOps Tools</h4>
+        <span>Jenkins • Docker • Kubernetes • Terraform • Ansible</span>
+      </div>
+      <div class="skill">
+        <h4>Observability & Security</h4>
+        <span>SonarQube • Nexus • Trivy • Prometheus</span>
+      </div>
+      <div class="skill">
+        <h4>Scripting & OS</h4>
+        <span>Python • Bash Shell • Linux (Ubuntu/CentOS)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact</h2>
+    <p class="section-desc">
+      Currently based in Pune, India. Open to opportunities in Cloud & DevOps.
+    </p>
+    <div class="cta">
+      <a href="mailto:faizalmohdrafiquebagwan@gmail.com" class="btn primary">Email Me</a>
+      <a href="https://linkedin.com/in/faizalbagwan" target="_blank" class="btn">LinkedIn</a>
+      <a href="https://github.com/faizalbagwan786" target="_blank" class="btn">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Faizal Bagwan</p>
+</footer>
+
+</body>
+</html>
